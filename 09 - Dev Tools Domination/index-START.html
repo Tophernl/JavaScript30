@@ -18,28 +18,74 @@
     }
 
     // Regular
+    console.log("Regular log message");
 
     // Interpolated
+    console.log("This is a %s !", "string");
+    
 
     // Styled
+    // console.log("%c Superstyled", "font-size: 48px; background: yellow; color: white; text-shadow: 3px 3px 0 black");
 
     // warning!
+    console.warn("This is a warning");
 
     // Error :|
+    console.error("This is an error");
 
     // Info
+    console.info("This is information");
 
     // Testing
+    const p = document.querySelector("p");
+
+    console.assert(p.classList.contains ("ouch"), "Class not found");
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
 
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`Hi there! I'm ${dog.name}`);
+      console.log(`I'm ${dog.age} years old`);
+      console.log(`That's ${dog.age * 7} in dog years`);
+      console.groupEnd(`${dog.name}`);
+      
+      
+    })
+
     // counting
+    console.count("A");
+    console.count("A");
+    console.count("A");
+    console.count("B");
+    console.count("B");
+    console.count("B");
+    console.count("A");
+    console.count("A");
+    console.count("B");
+    console.count("B");
+    console.count("A");
+    console.count("B");
+    console.count("A");
+    console.count("A");
+    console.count("A");
+    console.count("B");
 
     // timing
+    console.time("Fetch test data");
+    fetch("https://api.github.com/users/Tophernl")
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd("Fetch test data");
+      console.table(data);  
+    })
 
   </script>
 </body>
